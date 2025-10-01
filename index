@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchantment in Glass - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Slideshow Background - 22 slides, 5 seconds each = 110 seconds total */
+        .slideshow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slideshow 110s infinite;
+        }
+
+        .slide:nth-child(1) { background-image: url('/001.jpg'); animation-delay: 0s; }
+        .slide:nth-child(2) { background-image: url('/002.jpg'); animation-delay: 5s; }
+        .slide:nth-child(3) { background-image: url('/003.jpg'); animation-delay: 10s; }
+        .slide:nth-child(4) { background-image: url('/004.jpg'); animation-delay: 15s; }
+        .slide:nth-child(5) { background-image: url('/005.jpg'); animation-delay: 20s; }
+        .slide:nth-child(6) { background-image: url('/006.jpg'); animation-delay: 25s; }
+        .slide:nth-child(7) { background-image: url('/007.jpg'); animation-delay: 30s; }
+        .slide:nth-child(8) { background-image: url('/008.jpg'); animation-delay: 35s; }
+        .slide:nth-child(9) { background-image: url('/009.jpg'); animation-delay: 40s; }
+        .slide:nth-child(10) { background-image: url('/010.jpg'); animation-delay: 45s; }
+        .slide:nth-child(11) { background-image: url('/011.jpg'); animation-delay: 50s; }
+        .slide:nth-child(12) { background-image: url('/012.jpg'); animation-delay: 55s; }
+        .slide:nth-child(13) { background-image: url('/013.jpg'); animation-delay: 60s; }
+        .slide:nth-child(14) { background-image: url('/014.jpg'); animation-delay: 65s; }
+        .slide:nth-child(15) { background-image: url('/015.jpg'); animation-delay: 70s; }
+        .slide:nth-child(16) { background-image: url('/016.jpg'); animation-delay: 75s; }
+        .slide:nth-child(17) { background-image: url('/017.jpg'); animation-delay: 80s; }
+        .slide:nth-child(18) { background-image: url('/018.jpg'); animation-delay: 85s; }
+        .slide:nth-child(19) { background-image: url('/019.jpg'); animation-delay: 90s; }
+        .slide:nth-child(20) { background-image: url('/020.jpg'); animation-delay: 95s; }
+        .slide:nth-child(21) { background-image: url('/021.jpg'); animation-delay: 100s; }
+        .slide:nth-child(22) { background-image: url('/022.jpg'); animation-delay: 105s; }
+
+        @keyframes slideshow {
+            0%, 4.55%, 100% { opacity: 0; }
+            0.45%, 4.09% { opacity: 1; }
+        }
+
+        /* Overlay to ensure text readability */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(3px);
+            z-index: 0;
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .logo-container {
+            max-width: 600px;
+            width: 90%;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+        }
+
+        .main-content {
+            background: linear-gradient(135deg, rgba(200, 140, 120, 0.9), rgba(180, 120, 140, 0.9));
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #fff;
+            margin-bottom: 30px;
+            font-style: italic;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .description {
+            font-size: 1.1em;
+            color: #fff;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            font-size: 1.1em;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .website {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .website a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            transition: border-color 0.3s ease;
+        }
+
+        .website a:hover {
+            border-color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .description {
+                font-size: 1em;
+            }
+
+            .main-content {
+                padding: 40px 30px;
+            }
+
+            .contact-section {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="logo-container">
+            <img src="/logo.png" alt="Enchantment in Glass Logo">
+        </div>
+
+        <div class="main-content">
+            <h1>Coming Soon</h1>
+            <p class="subtitle">Artistry in Glass</p>
+            <p class="description">
+                Creating beautiful, handcrafted glass art pieces that bring color and light into your world. 
+                Each piece is uniquely designed with passion and precision.
+            </p>
+
+            <div class="contact-section">
+                <h2>Get in Touch</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Email:</strong> <a href="mailto:contact@anayalynn.com">contact@anayalynn.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a>
+                    </div>
+                </div>
+                <p class="website">
+                    <a href="https://anayalynn.com" target="_blank">anayalynn.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
